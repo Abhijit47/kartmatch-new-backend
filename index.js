@@ -38,7 +38,11 @@ app.use(
 );
 
 // Apply helmet for security headers
-app.use(helmet());
+app.use(
+  helmet({
+    originAgentCluster: true, // Enable Origin-Agent-Cluster header
+  })
+);
 
 // Rate limiter setup
 const rateLimiter = new RateLimiterMemory({
