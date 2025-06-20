@@ -67,8 +67,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // MongoDB connection
-const mongoURI =
-  'mongodb+srv://kartmatch:aC0cZJsIr2oLpOi2@cluster0.eax21iu.mongodb.net/kart-match?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.DATABASE_URL;
 mongoose
   .connect(mongoURI, {
     // useNewUrlParser: true,
